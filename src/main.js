@@ -26,7 +26,7 @@ function SortableTable ({ data }) {
     return (
         <div>
             <table>
-                {sortedData.map((row, index) => <tr key={index}>{row.map((cell,columnIndex) => <th onClick={e => sortByColumn(columnIndex)}>{cell}</th>)}</tr>)}
+                {sortedData.map((row, index) => <tr key={index}>{row.map((cell,columnIndex) => <th onClick={columnIndex===0 ? e => sortByColumn(columnIndex) : e => {return;}}>{cell}</th>)}</tr>)}
             </table>
         </div>
     )
